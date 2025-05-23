@@ -66,6 +66,7 @@ export default function DHPLoginPage() {
         <div className="absolute inset-0 bg-repeat w-full h-full">
           <img src="logos/big-login.png" alt="" className="w-full h-full object-cover" />
         </div>
+        asd
       </div>
 
       {/* Right side - Login form */}
