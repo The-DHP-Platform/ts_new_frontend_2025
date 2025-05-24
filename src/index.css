@@ -2,6 +2,9 @@
 .bg-primary{
     background: rgba(102, 142, 108, 1);
 }
+.bg-primary:hover{
+    background: rgb(79, 113, 84);
+}
 .text-primary{
     color: rgba(102, 142, 108, 1);
 }

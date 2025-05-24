@@ -3,7 +3,7 @@ import { ArrowRight, User2 } from 'lucide-react';
 
 const DHPHeroSection: React.FC = () => {
   return (
-    <section className="relative h-[600px] bg-primary overflow-hidden">
+    <section className="relative h-[600px] max-md:pt-54 bg-primary overflow-hidden">
 
       {/* Background Pattern Overlay */}
       <div className="absolute inset-0 opacity-60">
@@ -42,7 +42,7 @@ const DHPHeroSection: React.FC = () => {
             {/* Left Content */}
             <div className="text-center lg:text-left space-y-8 text-white">
               <div className="space-y-6">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
+                <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
                   Know more about{' '}
                   <span className="bg-clip-text">
                     DHP platform
@@ -56,7 +56,7 @@ const DHPHeroSection: React.FC = () => {
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <div className="flex  sm:flex-row gap-4 justify-center lg:justify-start">
                 <button className="btn-primary group inline-flex items-center gap-3 px-8 py-4 rounded-full text-white font-semibold text-lg transition-all duration-300 hover:shadow-xl">
                   <span>Get Started</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
