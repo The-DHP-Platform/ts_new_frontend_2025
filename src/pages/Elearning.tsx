@@ -1,5 +1,7 @@
+import RwandanCultureHero from "../comps/HeroElearning"
 
-import RwandanCultureHero from '../comps/HeroElearning';
+
+
 const Elearning = () => {
   return (
     <>

@@ -1,4 +1,4 @@
-import { ArrowBigLeftIcon, ArrowRight } from 'lucide-react';
+import {  ArrowRight } from 'lucide-react';
 import React from 'react';
 
 const MissionVision: React.FC = () => {
