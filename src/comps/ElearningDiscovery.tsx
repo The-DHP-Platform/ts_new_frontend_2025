@@ -80,7 +80,7 @@ const LastDiscoveredSection: React.FC = () => {
               >
                 <div className="flex">
                   {/* Image */}
-                  <div className="w-32 sm:w-40 h-24 sm:h-28 flex-shrink-0">
+                  <div className="w-32 sm:w-40 h-24 sm:h-32 flex-shrink-0">
                     <img
                       src={item.image}
                       alt={item.imageAlt}
