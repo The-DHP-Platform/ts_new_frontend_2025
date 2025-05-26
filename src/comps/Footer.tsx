@@ -164,9 +164,8 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-
             {/* Newsletter & Contact - Full width on mobile */}
-            <div className="sm:col-span-2 lg:col-span-3 xl:col-span-1">
+            <div className="sm:col-span-1 lg:col-span-3 xl:col-span-1">
               <h3 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6 relative">
                 Stay Connected
                 <div className="absolute -bottom-2 left-0 w-12 h-0.5 bg-white/30"></div>
@@ -229,6 +228,7 @@ const Footer = () => {
                 ))}
               </div>
             </div>
+
           </div>
         </div>
 

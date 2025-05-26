@@ -100,7 +100,7 @@ export default function DHPRegisterPage() {
       <div className="w-full md:w-1/2 flex flex-col items-center justify-start p-8 overflow-auto">
         <div className="w-full max-w-md">
           {/* Logo and header */}
-          <div className="flex items-center justify-center mb-6">
+          <div className="flex items-center justify-center mb-6 cursor-pointer" onClick={()=>window.location.href = "/"}>
             <div className="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center mr-3">
               <img src="logos/logo-circle.png" alt="" className="w-full h-full object-cover" />
             </div>

@@ -8,7 +8,7 @@ const DHPHeroSection: React.FC = () => {
       {/* Background Pattern Overlay */}
       <div className="absolute inset-0 opacity-60">
         <div className="absolute inset-0" style={{
-          backgroundImage: `url("logos/aboutHero.png")`,
+          // backgroundImage: `url("logos/aboutHero.png")`,
           backgroundRepeat:"no-repeat",
           backgroundSize:"cover"
         }} />
