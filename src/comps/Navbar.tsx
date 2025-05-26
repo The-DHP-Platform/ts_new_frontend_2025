@@ -1,4 +1,4 @@
-import { Home, BookOpen, ShoppingCart, GraduationCap, LogIn, UserPlus, Menu, X } from 'lucide-react';
+import { Home, BookOpen, ShoppingCart, GraduationCap, LogIn, UserPlus, Menu, X, User } from 'lucide-react';
 import { useState, type SetStateAction } from 'react';
 
 import Footer from './Footer';
@@ -32,26 +32,30 @@ export default function DigitalHeritagePlatform() {
                         </div>
 
                         {/* Navigation Links - Center (Desktop) */}
-                        <div className="hidden xl:flex items-center space-x-8">
+                        <div className="hidden xl:flex items-center space-x-8 ">
                             <a onClick={() => handelNavigation("home")} className="flex items-center space-x-1 text-gray-700 hover:text-green-900 transition-colors duration-200">
                                 <Home className="h-4 w-4" />
-                                <span className="font-medium">Home</span>
+                                <span className="font-bold">Home</span>
                             </a>
                             <a onClick={() => handelNavigation("about")} className="flex items-center space-x-1 text-gray-700 hover:text-green-900 transition-colors duration-200">
                                 <BookOpen className="h-4 w-4" />
-                                <span className="font-medium">About Us</span>
+                                <span className="font-bold">About Us</span>
                             </a>
                             <a onClick={() => handelNavigation("about")} className="flex items-center space-x-1 text-gray-700 hover:text-green-900 transition-colors duration-200">
                                 <ShoppingCart className="h-4 w-4" />
-                                <span className="font-medium">Marketplace</span>
+                                <span className="font-bold">Marketplace</span>
                             </a>
                             <a onClick={() => handelNavigation("elearning")} className="flex items-center space-x-1 text-gray-700 hover:text-green-900 transition-colors duration-200">
                                 <GraduationCap className="h-4 w-4" />
-                                <span className="font-medium">E-Learning</span>
+                                <span className="font-bold">E-Learning</span>
                             </a>
                             <a onClick={() => handelNavigation("about")} className="flex items-center space-x-1 text-gray-700 hover:text-green-900 transition-colors duration-200">
                                 <GraduationCap className="h-4 w-4" />
-                                <span className="font-medium">Get involved</span>
+                                <span className="font-bold">Resources</span>
+                            </a>
+                            <a onClick={() => handelNavigation("about")} className="flex items-center space-x-1 text-gray-700 hover:text-green-900 transition-colors duration-200">
+                                <User className="h-4 w-4" />
+                                <span className="font-bold">Get involved</span>
                             </a>
                         </div>
 
@@ -59,11 +63,11 @@ export default function DigitalHeritagePlatform() {
                         <div className="hidden xl:flex items-center space-x-3">
                             <a href="/login" className="flex items-center space-x-2 px-4 py-2 text-gray-700 hover:text-green-900 transition-colors duration-200">
                                 <LogIn className="h-4 w-4" />
-                                <span className="font-medium">Log In</span>
+                                <span className="font-bold">Log In</span>
                             </a>
                             <a href="/register" className="flex items-center space-x-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors duration-200">
                                 <UserPlus className="h-4 w-4" />
-                                <span className="font-medium">Sign Up</span>
+                                <span className="font-bold">Sign Up</span>
                             </a>
                         </div>
 
@@ -83,30 +87,38 @@ export default function DigitalHeritagePlatform() {
                                 {/* Mobile Navigation Links */}
                                 <a onClick={() => handelNavigation("home")} className="flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-700 hover:text-green-900 hover:bg-gray-50 transition-colors duration-200">
                                     <Home className="h-4 w-4" />
-                                    <span className="font-medium">Home</span>
+                                    <span className="font-bold">Home</span>
                                 </a>
                                 <a onClick={() => handelNavigation("about")} className="flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-700 hover:text-green-900 hover:bg-gray-50 transition-colors duration-200">
                                     <BookOpen className="h-4 w-4" />
-                                    <span className="font-medium">about us</span>
+                                    <span className="font-bold">about us</span>
                                 </a>
                                 <a onClick={() => handelNavigation("about")} className="flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-700 hover:text-green-900 hover:bg-gray-50 transition-colors duration-200">
                                     <ShoppingCart className="h-4 w-4" />
-                                    <span className="font-medium">Marketplace</span>
+                                    <span className="font-bold">Marketplace</span>
                                 </a>
                                 <a onClick={() => handelNavigation("elearning")} className="flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-700 hover:text-green-900 hover:bg-gray-50 transition-colors duration-200">
                                     <GraduationCap className="h-4 w-4" />
-                                    <span className="font-medium">E-Learning</span>
+                                    <span className="font-bold">E-Learning</span>
+                                </a>
+                                <a onClick={() => handelNavigation("resource")} className="flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-700 hover:text-green-900 hover:bg-gray-50 transition-colors duration-200">
+                                    <GraduationCap className="h-4 w-4" />
+                                    <span className="font-bold">Resources</span>
+                                </a>
+                                <a onClick={() => handelNavigation("resource")} className="flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-700 hover:text-green-900 hover:bg-gray-50 transition-colors duration-200">
+                                    <User className="h-4 w-4" />
+                                    <span className="font-bold">Get involved</span>
                                 </a>
 
                                 {/* Mobile Auth Buttons */}
                                 <div className="pt-4 space-y-2">
                                     <a href="/login" className="flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-700 hover:text-green-900 hover:bg-gray-50 transition-colors duration-200">
                                         <LogIn className="h-4 w-4" />
-                                        <span className="font-medium">Log In</span>
+                                        <span className="font-bold">Log In</span>
                                     </a>
                                     <a href="/register" className="flex items-center space-x-2 px-3 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors duration-200">
                                         <UserPlus className="h-4 w-4" />
-                                        <span className="font-medium">Sign Up</span>
+                                        <span className="font-bold">Sign Up</span>
                                     </a>
                                 </div>
                             </div>

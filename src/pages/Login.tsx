@@ -66,11 +66,10 @@ export default function DHPLoginPage() {
         <div className="absolute inset-0 bg-repeat w-full h-full">
           <img src="logos/big-login.png" alt="" className="w-full h-full object-cover" />
         </div>
-        asd
       </div>
 
       {/* Right side - Login form */}
-      <div className="w-full md:w-1/2 flex flex-col items-center justify-start p-8">
+      <div className="w-full md:w-1/2 flex flex-col items-center justify-start p-8 overflow-auto">
         <div className="w-full max-w-md">
           {/* Logo and header */}
           <div className="flex items-center justify-center mb-6">
