@@ -27,10 +27,10 @@ const Footer = () => {
         <ChevronUp size={20} />
       </button>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main footer content */}
         <div className="py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-5 gap-8 lg:gap-12">
             
             {/* Digital Repository */}
             <div className="lg:col-span-1">
@@ -184,7 +184,7 @@ const Footer = () => {
               {/* Newsletter */}
               <div className="mb-8">
                 <p className="text-white/80 mb-4 text-sm">Subscribe to our newsletter for updates</p>
-                <div className="flex flex-col sm:flex-row gap-2">
+                <div className="flex flex-col lg:flex-row gap-2">
                   <input 
                     type="email" 
                     placeholder="Enter your email"
