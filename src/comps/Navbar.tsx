@@ -16,7 +16,7 @@ export default function DigitalHeritagePlatform() {
     return (
         <div className="min-h-screen bg-gray-50">
             {/* Navigation */}
-            <nav className="bg-white cursor-pointer">
+            <nav className="bg-white cursor-pointer sticky top-0 z-50">
                 <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center h-16">
 
