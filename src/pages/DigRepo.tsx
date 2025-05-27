@@ -1,6 +1,6 @@
 
-import DigitalRepository from '../comps/DigReposHero'
-import WhereToStartSection from '../comps/DigRepos'
+import DigitalRepository from '../comps/DigrepoComps/DigReposHero'
+import WhereToStartSection from '../comps/DigrepoComps/DigRepos'
 import { useState } from 'react'
 
 const DigRepo = () => {

@@ -1,9 +1,9 @@
 
-import CEOProfileSlider from '../comps/AboutUsCEO'
-import MissionVision from '../comps/Aboutvision'
-import DHPHeroSection from '../comps/HeroAbout'
-import DHPServicesSection from '../comps/MissionAbout'
-import HeritageTimeline from '../comps/StackAboutTimeLine'
+import CEOProfileSlider from '../comps/AboutComps/AboutUsCEO'
+import MissionVision from '../comps/AboutComps/Aboutvision'
+import DHPHeroSection from '../comps/AboutComps/HeroAbout'
+import DHPServicesSection from '../comps/AboutComps/MissionAbout'
+import HeritageTimeline from '../comps/AboutComps/StackAboutTimeLine'
 
 const AboutUs = () => {
   return (

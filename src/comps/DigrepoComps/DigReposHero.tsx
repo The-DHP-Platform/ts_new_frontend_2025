@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { ChevronDown, Menu, X, Download, Share2, Users, BookOpen, Archive, Database, Image, Building2 } from 'lucide-react';
 import PaintingsGallery from './DigRepoPainting';
+import MuseumsGallery from './DigRepoMesuasem';
 interface DigitalRepositoryProps {
     showThings: boolean;
     viewDig: string,
@@ -22,7 +23,8 @@ const DigitalRepository = ({ showThings, viewDig, setShowThings, setViewDig }: D
         {
             name: 'Museums',
             icon: Building2,
-            items: ['National Museum', 'Cultural Heritage', 'History Museum', 'Science Museum', 'Art Museum', 'Local Museums']
+            items: ['All Museums']
+            // items: ['National Museum', 'Cultural Heritage', 'History Museum', 'Science Museum', 'Art Museum', 'Local Museums']
         },
         {
             name: 'Libraries',
@@ -269,6 +271,8 @@ const DigitalRepository = ({ showThings, viewDig, setShowThings, setViewDig }: D
             </>}
             {/** Change the Viepages Here */}
             {viewDig == "Paintings" && <PaintingsGallery/>}
+            {viewDig == "All Museums"&& <MuseumsGallery/>}
+            {}
         </div>
     );
 };

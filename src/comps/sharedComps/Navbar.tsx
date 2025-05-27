@@ -2,10 +2,10 @@ import { Home, BookOpen, ShoppingCart, GraduationCap, LogIn, UserPlus, Menu, X, 
 import { useState, type SetStateAction } from 'react';
 
 import Footer from './Footer';
-import HomePage from '../pages/HomePage';
-import AboutUs from '../pages/AboutUs';
-import Elearning from '../pages/Elearning';
-import DigRepo from '../pages/DigRepo';
+import HomePage from '../../pages/HomePage';
+import AboutUs from '../../pages/AboutUs';
+import Elearning from '../../pages/Elearning';
+import DigRepo from '../../pages/DigRepo';
 
 export default function DigitalHeritagePlatform() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);

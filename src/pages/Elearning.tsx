@@ -1,8 +1,8 @@
-import CulturalCategorization from "../comps/ElearningCulture"
-import LastDiscoveredSection from "../comps/ElearningDiscovery"
-import MostFrequentGallery from "../comps/ElearningGallery"
-import TopInstructorSection from "../comps/ElearningTopInstructor"
-import RwandanCultureHero from "../comps/HeroElearning"
+import CulturalCategorization from "../comps/ElearningComps/ElearningCulture"
+import LastDiscoveredSection from "../comps/ElearningComps/ElearningDiscovery"
+import MostFrequentGallery from "../comps/ElearningComps/ElearningGallery"
+import TopInstructorSection from "../comps/ElearningComps/ElearningTopInstructor"
+import RwandanCultureHero from "../comps/ElearningComps/HeroElearning"
 
 
 
