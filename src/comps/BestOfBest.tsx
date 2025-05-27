@@ -33,7 +33,7 @@ const BooksProductView = () => {
 
     return (
         <div className="bg-primary py-12 px-4 sm:px-6 lg:px-8">
-            <div className="w-10/12 mx-auto max-sm:w-full">
+            <div className="max-w-full md:max-w-11/12 mx-auto max-sm:w-full">
                 {/* Header Section */}
                 <div className="text-center flex justify-between items-center py-3 mb-3">
                     <h1 className="text-4xl max-md:text-xl md:text-5xl font-bold text-white mb-4 tracking-tight">

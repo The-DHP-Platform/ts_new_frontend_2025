@@ -3,7 +3,7 @@ import { Check } from 'lucide-react';
 const ContributeSection = () => {
   return (
     <div className="bg-primary px-6 py-16 lg:px-16">
-      <div className="max-w-10/12 mx-auto">
+      <div className="max-w-full md:max-w-11/12 mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Content */}
           <div className="text-white space-y-8">

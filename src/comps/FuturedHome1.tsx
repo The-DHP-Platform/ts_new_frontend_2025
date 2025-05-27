@@ -36,7 +36,7 @@ const BookCategoriesGrid = () => {
 
     return (
         <div className=" bg-gradient-to-br from-slate-50 to-slate-100 py-16 px-4 sm:px-6 lg:px-8">
-            <div className="w-10/12 mx-auto max-sm:w-full">
+            <div className="max-w-full md:max-w-11/12 mx-auto max-sm:w-full">
                 {/* Header Section */}
                 <div className="flex justify-between items-center gap-3 mb-6 p-2 rounded-2xl border border-white/20 w-full">
 

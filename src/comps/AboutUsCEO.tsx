@@ -59,7 +59,7 @@ const CEOProfileSlider: React.FC = () => {
 
   return (
     <div className="bg-gray-50 py-16 px-4">
-      <div className="max-w-10/12 mx-auto">
+      <div className="max-w-11/12 mx-auto">
         <div className="relative bg-white rounded-xl overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
             {/* Image Section */}

@@ -17,7 +17,7 @@ const LastDiscoveredSection: React.FC = () => {
     {
       id: 1,
       category: 'UBWAMI',
-      categoryColor: 'text-blue-600',
+      categoryColor: 'text-blue-600 bg-blue-100',
       title: 'Inerakaranyabubasha bw\'Ingoma ya Cyami',
       author: 'Sohuvindje Mukamago',
       authorAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face',
@@ -27,7 +27,7 @@ const LastDiscoveredSection: React.FC = () => {
     {
       id: 2,
       category: 'UBUKANGURAMBERE',
-      categoryColor: 'text-orange-600',
+      categoryColor: 'text-orange-600 bg-orange-100',
       title: 'Guterekera kubahindwa ryindi nihozogo yako...',
       author: 'Rulanga Rwamutobo',
       authorAvatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face',
@@ -37,7 +37,7 @@ const LastDiscoveredSection: React.FC = () => {
     {
       id: 3,
       category: 'AMATEKA',
-      categoryColor: 'text-purple-600',
+      categoryColor: 'text-purple-600 bg-purple-100',
       title: 'Imyaka 30 u Rwanda rwamanze nta Butegera',
       author: 'Chephas Bazirir',
       authorAvatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=32&h=32&fit=crop&crop=face',
@@ -47,7 +47,7 @@ const LastDiscoveredSection: React.FC = () => {
     {
       id: 4,
       category: 'UBWOBA',
-      categoryColor: 'text-green-600',
+      categoryColor: 'text-green-600 bg-green-100',
       title: 'Mbambwe Rutarinduwa Amateka ye n\'uko yaje...',
       author: 'Joselm Nzituzye',
       authorAvatar: 'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?w=32&h=32&fit=crop&crop=face',
@@ -64,8 +64,8 @@ const LastDiscoveredSection: React.FC = () => {
   ];
 
   return (
-    <div className="bg-gray-50 min-h-screen py-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-10/12 mx-auto">
+    <div className="bg-gray-50  py-8 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-full md:max-w-11/12 mx-auto">
         {/* Last discovered section */}
         <div className="mb-16">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">
@@ -76,7 +76,7 @@ const LastDiscoveredSection: React.FC = () => {
             {discoveryItems.map((item) => (
               <div
                 key={item.id}
-                className="bg-blue-50 rounded-lg hover:shadow-md transition-shadow duration-300 overflow-hidden group cursor-pointer"
+                className="bg-white rounded-lg hover:shadow-sm transition-shadow duration-300 overflow-hidden group cursor-pointer"
               >
                 <div className="flex">
                   {/* Image */}
@@ -91,8 +91,8 @@ const LastDiscoveredSection: React.FC = () => {
                   {/* Content */}
                   <div className="flex-1 p-4 flex flex-col justify-between">
                     {/* Category */}
-                    <div className="mb-2">
-                      <span className={`text-xs font-bold uppercase tracking-wider ${item.categoryColor}`}>
+                    <div className={`mb-2 ${item.categoryColor} w-fit px-2 rounded-2xl`}>
+                      <span className={`text-xs font-bold uppercase tracking-wider`}>
                         {item.category}
                       </span>
                     </div>
@@ -154,7 +154,7 @@ const LastDiscoveredSection: React.FC = () => {
               Each step of the way
             </h3>
             
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
               {steps.map((step) => (
                 <div key={step.number} className="flex items-center space-x-4 p-4 bg-white rounded-lg hover:shadow-md transition-shadow duration-200">
                   <div className={`w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center font-bold text-sm ${step.color}`}>

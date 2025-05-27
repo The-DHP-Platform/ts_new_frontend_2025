@@ -43,7 +43,7 @@ const ArticlesSection: React.FC = () => {
 
   return (
     <section className="bg-white py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-10/12 w-full mx-auto">
+      <div className="max-w-full md:max-w-11/12 mx-auto">
         {/* Header */}
         <div className="flex justify-between items-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">

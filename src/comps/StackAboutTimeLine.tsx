@@ -36,31 +36,30 @@ const HeritageTimeline = () => {
 
   // Placeholder images with different aspect ratios
   const images = [
-    { id: 1, aspect: "aspect-[4/3]", bg: "bg-gradient-to-br from-gray-100 to-gray-300" },
-    { id: 2, aspect: "aspect-square", bg: "bg-gradient-to-br from-gray-200 to-gray-400" },
-    { id: 3, aspect: "aspect-[3/4]", bg: "bg-gradient-to-br from-blue-100 to-blue-200" },
-    { id: 4, aspect: "aspect-[2/3]", bg: "bg-gradient-to-br from-red-50 to-red-100" }
+    { id: 1, aspect: "aspect-[4/4]", bg: "https://www.explorerwandatours.com/wp-content/uploads/2023/05/caption-17-720x450.jpg" },
+    { id: 2, aspect: "aspect-square", bg: "https://visitrwanda.com/wp-content/uploads/fly-images/4516/Amasunzu-Collage-web-v2-1650x1004.jpg" },
+    { id: 3, aspect: "aspect-[3/2]", bg: "https://www.safarisrwandasafari.com/wp-content/uploads/2018/10/rwanda-culture.jpg" },
+    { id: 4, aspect: "aspect-[3/3]", bg: "https://miro.medium.com/v2/resize:fit:875/1*Mf3bymP1yP8RmBnzip58ig.png" }
   ];
 
   return (
     <div className="bg-white py-4 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-full md:max-w-11/12 mx-auto">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           
           {/* Left Column - Image Stack */}
-          <div className="order-2 lg:order-1">
+          <div className="order-2 lg:order-1 w-11/12">
             <div className="grid grid-cols-2 gap-3 h-fit">
               {images.map((image, index) => (
                 <div
                   key={image.id}
                   className={`
-                    ${image.aspect} ${image.bg} 
                     rounded-xl hover:scale-105 transform transition-all duration-300
                     ${index % 2 === 0 ? 'mt-0' : 'mt-6'}
                   `}
                 >
                   <div className="w-full h-full rounded-xl flex items-center justify-center">
-                    <img src="logos/img2.png" alt="" className="w-full h-full" />
+                    <img src={`${image.bg}`} alt="" className="w-full h-full object-cover" />
                   </div>
                 </div>
               ))}

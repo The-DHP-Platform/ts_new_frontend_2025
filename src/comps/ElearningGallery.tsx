@@ -23,7 +23,7 @@ const MostFrequentGallery: React.FC = () => {
       description: 'Historical documentation of Rwandan culture and traditions',
       duration: '12 hrs',
       followers: 265,
-      image: 'https://www.worldatlas.com/r/w1200/upload/64/db/60/shutterstock-195351551.jpg',
+      image: 'https://www.paulkagame.rw/wp-content/uploads/2016/09/San-Francisco.jpg',
       imageAlt: 'Group of people in traditional dress'
     },
     {
@@ -129,7 +129,7 @@ const MostFrequentGallery: React.FC = () => {
 
   return (
     <div className="bg-slate-100 min-h-screen py-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-11/12 mx-auto">
+      <div className="max-w-full md:max-w-11/12 mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">

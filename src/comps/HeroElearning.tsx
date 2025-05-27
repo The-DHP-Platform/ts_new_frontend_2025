@@ -7,7 +7,7 @@ const RwandanCultureHero = () => {
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     {/* Left Content */}
                     <div className="space-y-8">
-                        <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                        <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
                             Learn all about{' '}
                             <span className="">Rwandan</span> &{' '}
                             <span className="">African culture</span>

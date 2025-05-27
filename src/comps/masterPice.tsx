@@ -159,7 +159,7 @@ const BookSlider = () => {
 
     return (
         <div className="w-full bg-gradient-to-br from-slate-50 to-slate-100 py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
-            <div className="w-full max-w-10/12 mx-auto">
+            <div className="max-w-full md:max-w-11/12 mx-auto">
                 {/* Header */}
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 sm:mb-8">
                     <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r bg-clip-text text-black">

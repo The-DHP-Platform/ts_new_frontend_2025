@@ -4,7 +4,7 @@ const HeritagePlatform = () => {
   return (
     <div className=" bg-white">
       {/* Main Content Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+      <div className="max-w-full md:max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
         {/* Three Cards Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mb-16 lg:mb-24">
           {/* Digital Repository Card */}

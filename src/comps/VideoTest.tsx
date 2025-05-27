@@ -39,7 +39,7 @@ const StorySlider = () => {
     const currentStory = stories[currentSlide];
 
     return (
-        <div className="max-w-10/12 w-full mx-auto px-4 py-12">
+        <div className="max-w-full md:max-w-11/12 mx-auto px-4 py-12">
             <div className="bg-white rounded-2xl overflow-hidden">
                 <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
 

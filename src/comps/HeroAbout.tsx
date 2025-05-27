@@ -36,7 +36,7 @@ const DHPHeroSection: React.FC = () => {
 
       {/* Main Content */}
       <div className="relative z-10 flex items-center justify-center h-[600px] px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-full md:max-w-11/12 mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
             {/* Left Content */}
