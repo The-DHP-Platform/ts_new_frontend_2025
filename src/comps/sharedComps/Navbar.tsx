@@ -43,7 +43,7 @@ export default function DigitalHeritagePlatform() {
     return (
         <div className="min-h-screen bg-gray-50">
             {/* Navigation */}
-            <nav className="bg-white cursor-pointer sticky top-0 z-50">
+            <nav className="bg-white/70 backdrop-blur-md cursor-pointer sticky top-0 z-50">
                 <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center h-16">
 
@@ -68,17 +68,17 @@ export default function DigitalHeritagePlatform() {
                                 <BookOpen className="h-4 w-4" />
                                 <span className="font-bold">About Us</span>
                             </a>
-                            <a onClick={() => { handelNavigation("marketplace") }} className={getNavClasses("marketplace")}>
+                            <a onClick={() => { handelNavigation("resources") }} className={getNavClasses("resources")}>
+                                <GraduationCap className="h-4 w-4" />
+                                <span className="font-bold">Resources</span>
+                            </a>
+                            <a href='/market' className={getNavClasses("marketplace")}>
                                 <ShoppingCart className="h-4 w-4" />
                                 <span className="font-bold">Marketplace</span>
                             </a>
                             <a onClick={() => { handelNavigation("elearning") }} className={getNavClasses("elearning")}>
                                 <GraduationCap className="h-4 w-4" />
                                 <span className="font-bold">E-Learning</span>
-                            </a>
-                            <a onClick={() => { handelNavigation("resources") }} className={getNavClasses("resources")}>
-                                <GraduationCap className="h-4 w-4" />
-                                <span className="font-bold">Resources</span>
                             </a>
                             <a onClick={() => { handelNavigation("involved") }} className={getNavClasses("involved")}>
                                 <User className="h-4 w-4" />
@@ -120,7 +120,7 @@ export default function DigitalHeritagePlatform() {
                                     <BookOpen className="h-4 w-4" />
                                     <span className="font-bold">About Us</span>
                                 </a>
-                                <a onClick={() => { handelNavigation("marketplace") }} className={getMobileNavClasses("marketplace")}>
+                                <a href='/market' className={getMobileNavClasses("marketplace")}>
                                     <ShoppingCart className="h-4 w-4" />
                                     <span className="font-bold">Marketplace</span>
                                 </a>

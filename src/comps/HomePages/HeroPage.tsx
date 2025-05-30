@@ -31,7 +31,7 @@ export default function CultureHeritageHero() {
                     <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
                         Culture & Heritage in
                         <br />
-                        <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent drop-shadow-lg">
+                        <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-white drop-shadow-lg">
                             Rwanda.
                         </span>
                     </h1>

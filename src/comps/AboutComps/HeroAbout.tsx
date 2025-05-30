@@ -3,7 +3,7 @@ import { ArrowRight, User2 } from 'lucide-react';
 
 const DHPHeroSection: React.FC = () => {
   return (
-    <section className="relative h-[600px] max-md:pt-54 bg-primary overflow-hidden">
+    <section className="relative h-[650px] max-md:pt-54 bg-primary overflow-hidden">
 
       {/* Background Pattern Overlay */}
       <div className="absolute inset-0 opacity-60">

@@ -14,65 +14,65 @@ interface Painting {
 const mockPaintings: Painting[] = [
   {
     id: 1,
-    title: "Vases Family",
-    category: "Still Life",
+    title: "Traditional Intore Dancers",
+    category: "Traditional Dance",
     image: "https://visitrwanda.com/wp-content/uploads/fly-images/2029/Visit-Rwanda_-Nyanza-Traditional-Intore-Dancers-1650x1100.jpg",
-    artist: "Traditional Potter",
+    artist: "Cultural Heritage",
     year: "2023",
-    description: "Collection of handcrafted ceramic vases"
+    description: "Traditional Rwandan dancers performing the iconic Intore dance"
   },
   {
     id: 2,
-    title: "Artisan at Work",
-    category: "Portrait",
+    title: "Young Intore Performers",
+    category: "Traditional Dance",
     image: "https://turkanawildlifesafaris.com/wp-content/uploads/2024/05/Red-Rocks-Rwanda-Festival-2022-Intore-kids-dancing.jpg",
-    artist: "Documentary Series",
+    artist: "Festival Documentation",
     year: "2023",
-    description: "Craftsman creating traditional textiles"
+    description: "Children performing traditional Intore dance at cultural festival"
   },
   {
     id: 3,
-    title: "Street Art Mural",
-    category: "Street Art",
+    title: "Rwandan Landscape",
+    category: "Landscapes",
     image: "https://vicparkarts.org.au/wp-content/uploads/2024/01/Rwanda-Images-landscape-1.jpg",
-    artist: "Urban Artists Collective",
+    artist: "Nature Photography",
     year: "2023",
-    description: "Vibrant street mural with geometric patterns"
+    description: "Beautiful rolling hills of Rwanda - Land of a Thousand Hills"
   },
   {
     id: 4,
-    title: "Woven Basket Art",
-    category: "Crafts",
+    title: "Traditional Basket Weaving",
+    category: "Handicrafts",
     image: "https://www.wildwhispersafrica.com/wp-content/uploads/rwanda-culture-safaris.jpg",
-    artist: "Traditional Weaver",
+    artist: "Artisan Collective",
     year: "2023",
-    description: "Intricate basket weaving patterns"
+    description: "Master craftspeople creating traditional Rwandan baskets"
   },
   {
     id: 5,
-    title: "Community Wall",
-    category: "Street Art",
+    title: "Historical Rwanda",
+    category: "Historical Art",
     image: "https://www.explorerwandatours.com/wp-content/uploads/2017/10/History-of-Rwanda.jpg",
-    artist: "Local Community",
+    artist: "Historical Archive",
     year: "2023",
-    description: "Collaborative community art project"
+    description: "Depicting Rwanda's rich historical heritage and culture"
   },
   {
     id: 6,
-    title: "Watercolor Abstract",
-    category: "Abstract",
+    title: "Cultural Celebration",
+    category: "Festivals",
     image: "https://www.worldatlas.com/r/w1200/upload/a4/e8/58/shutterstock-1750456022.jpg",
-    artist: "Modern Artist",
+    artist: "Community Artists",
     year: "2023",
-    description: "Blue and green watercolor composition"
+    description: "Vibrant celebration of Rwandan cultural traditions"
   }
 ];
 
-const categories = ["All", "Paintings", "Sculptures", "Photography", "Exhibition Archives"];
+const categories = ["All", "Traditional Dance", "Handicrafts", "Landscapes", "Historical Art", "Festivals"];
 
 export default function PaintingsGallery() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("Paintings");
+  const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedPaintings, setSelectedPaintings] = useState<number[]>([]);
 
   const filteredPaintings = useMemo(() => {
@@ -80,9 +80,12 @@ export default function PaintingsGallery() {
       const matchesSearch = painting.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            painting.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            (painting.artist && painting.artist.toLowerCase().includes(searchTerm.toLowerCase()));
-      return matchesSearch;
+      
+      const matchesCategory = selectedCategory === "All" || painting.category === selectedCategory;
+      
+      return matchesSearch && matchesCategory;
     });
-  }, [searchTerm]);
+  }, [searchTerm, selectedCategory]);
 
   const togglePaintingSelection = (id: number) => {
     setSelectedPaintings(prev => 
@@ -103,15 +106,16 @@ export default function PaintingsGallery() {
           {/* Breadcrumb */}
           <div className="flex items-center py-3 text-sm text-gray-500">
             <Home className="w-4 h-4 mr-2" />
-            <span className="hover:text-gray-700 cursor-pointer">Galleries</span>
+            <span className="hover:text-gray-700 cursor-pointer">Rwanda Culture</span>
             <ChevronRight className="w-4 h-4 mx-2" />
-            <span className="text-gray-900 font-medium">Paintings</span>
+            <span className="text-gray-900 font-medium">Art Gallery</span>
           </div>
 
           {/* Main Header */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between py-6">
             <div className="flex-1">
-              <h1 className="text-3xl font-bold text-gray-900 mb-4 sm:mb-0">Paintings</h1>
+              <h1 className="text-3xl font-bold text-gray-900 mb-4 sm:mb-0">Rwanda Cultural Heritage</h1>
+              <p className="text-gray-600">Explore the rich artistic traditions of Rwanda</p>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
@@ -120,7 +124,7 @@ export default function PaintingsGallery() {
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <input
                   type="text"
-                  placeholder="Search images in gallery"
+                  placeholder="Search cultural artworks..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="pl-10 pr-4 py-2 w-full outline-none sm:w-80 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
@@ -181,32 +185,60 @@ export default function PaintingsGallery() {
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
               <h3 className="font-semibold text-gray-900 mb-4">Categories</h3>
               <nav className="space-y-2">
-                {categories.map((category) => (
-                  <button
-                    key={category}
-                    onClick={() => setSelectedCategory(category)}
-                    className={`w-full text-left px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                      selectedCategory === category
-                        ? 'bg-orange-100 text-orange-700'
-                        : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
-                    }`}
-                  >
-                    {category}
-                  </button>
-                ))}
+                {categories.map((category) => {
+                  const categoryCount = category === "All" 
+                    ? mockPaintings.length 
+                    : mockPaintings.filter(p => p.category === category).length;
+                  
+                  return (
+                    <button
+                      key={category}
+                      onClick={() => setSelectedCategory(category)}
+                      className={`w-full text-left px-3 py-2 rounded-lg text-sm font-medium transition-colors flex items-center justify-between ${
+                        selectedCategory === category
+                          ? 'bg-orange-100 text-orange-700'
+                          : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                      }`}
+                    >
+                      <span>{category}</span>
+                      <span className="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded-full">
+                        {categoryCount}
+                      </span>
+                    </button>
+                  );
+                })}
               </nav>
             </div>
           </div>
 
           {/* Main Content */}
           <div className="flex-1">
+            {/* Results count */}
+            <div className="mb-6">
+              <p className="text-sm text-gray-600">
+                Showing {filteredPaintings.length} of {mockPaintings.length} artworks
+                {selectedCategory !== "All" && (
+                  <span className="ml-1">in "{selectedCategory}"</span>
+                )}
+              </p>
+            </div>
+
             {filteredPaintings.length === 0 ? (
               <div className="text-center py-12">
                 <div className="text-gray-400 mb-4">
                   <Search className="w-12 h-12 mx-auto" />
                 </div>
-                <h3 className="text-lg font-medium text-gray-900 mb-2">No paintings found</h3>
-                <p className="text-gray-500">Try adjusting your search terms or browse all categories.</p>
+                <h3 className="text-lg font-medium text-gray-900 mb-2">No artworks found</h3>
+                <p className="text-gray-500">Try adjusting your search terms or browse different categories.</p>
+                <button 
+                  onClick={() => {
+                    setSearchTerm("");
+                    setSelectedCategory("All");
+                  }}
+                  className="mt-4 text-orange-600 hover:text-orange-700 font-medium"
+                >
+                  Clear filters
+                </button>
               </div>
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

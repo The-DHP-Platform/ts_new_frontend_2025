@@ -88,7 +88,7 @@ export default function MuseumsGallery() {
                                 <div className="flex items-center py-4 text-sm text-gray-500">
                                     <Home className="w-4 h-4 mr-2" />
                                     <span className="text-primary font-medium">Museums</span>
-                                    <span className='px-1 flex'>/</span>
+                                    <span className='px-1 flex'>{">"} </span>
                                     <span className="text-primary font-medium">{selectedCategory}</span>
                                 </div>
 

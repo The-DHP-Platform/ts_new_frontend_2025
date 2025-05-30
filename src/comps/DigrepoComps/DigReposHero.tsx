@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { ChevronDown, Menu, X, Download, Share2, Users, BookOpen, Archive, Database, Image, Building2 } from 'lucide-react';
+import { ChevronDown, Menu, X, Download, Share2, Users, BookOpen, Archive, Database, Image, Building2, User2 } from 'lucide-react';
 import PaintingsGallery from './DigRepoPainting';
 import MuseumsGallery from './DigRepoMesuasem';
 interface DigitalRepositoryProps {
@@ -66,7 +66,7 @@ const DigitalRepository = ({ showThings, viewDig, setShowThings, setViewDig }: D
             }}
             className={`${showThings && `min-h-screen bg-cover bg-gradient-to-br from-slate-50 via-white to-blue-50`}`}>
             {/* Creator Modal */}
-            {showCreatorModal && (
+            {showCreatorModal && showThings && (
                 <div className="absolute inset-0 bg-black/0 backdrop-blur-none z-46 flex items-center justify-center p-4 w-fit h-fit top-23 ml-auto">
                     <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 transform animate-in fade-in-50 zoom-in-95">
                         <div className="flex items-center gap-3 mb-4">
@@ -122,7 +122,7 @@ const DigitalRepository = ({ showThings, viewDig, setShowThings, setViewDig }: D
                                             {item.items.map((subItem, index) => (
                                                 <a
                                                     key={index}
-                                                    onClick={()=>{setViewDig(subItem);setShowThings(false);}}
+                                                    onClick={() => { setViewDig(subItem); setShowThings(false); }}
                                                     className="block px-4 py-3 text-gray-700 hover:text-primary hover:bg-blue-50/50 transition-colors"
                                                 >
                                                     {subItem}
@@ -133,7 +133,7 @@ const DigitalRepository = ({ showThings, viewDig, setShowThings, setViewDig }: D
                                 </div>
                             ))}
                         </div>
-
+                        <button className='bg-orange-400 gap-2 flex text-white py-2 px-3 rounded-md cursor-pointer hover:bg-orange-500'><User2/> My Content</button>
                         {/* Mobile menu button */}
                         <button
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -165,7 +165,7 @@ const DigitalRepository = ({ showThings, viewDig, setShowThings, setViewDig }: D
                                             {item.items.map((subItem, index) => (
                                                 <a
                                                     key={index}
-                                                    onClick={()=>setViewDig(subItem)}
+                                                    onClick={() => setViewDig(subItem)}
                                                     className="block px-4 py-2 text-gray-600 hover:text-primary hover:bg-blue-50/50 rounded-lg transition-colors"
                                                 >
                                                     {subItem}
@@ -270,9 +270,9 @@ const DigitalRepository = ({ showThings, viewDig, setShowThings, setViewDig }: D
                 </div>
             </>}
             {/** Change the Viepages Here */}
-            {viewDig == "Paintings" && <PaintingsGallery/>}
-            {viewDig == "All Museums"&& <MuseumsGallery/>}
-            {}
+            {viewDig == "Paintings" && <PaintingsGallery />}
+            {viewDig == "All Museums" && <MuseumsGallery />}
+            { }
         </div>
     );
 };

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ArrowLeft, MapPin, Clock, Users, Camera, BookOpen, Globe, Play } from 'lucide-react';
+import RelatedSuggestionsDemo from './DigRepoYouMight';
 
 interface Museum {
     id: number;
@@ -419,6 +420,7 @@ export default function MuseumDetailView({ museum, onBack }: MuseumDetailViewPro
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 lg:p-8">
               {renderContent()}
             </div>
+            <RelatedSuggestionsDemo/>
           </div>
         </div>
       </div>
