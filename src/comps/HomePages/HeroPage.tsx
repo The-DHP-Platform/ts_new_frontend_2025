@@ -8,11 +8,11 @@ export default function CultureHeritageHero() {
                 <div
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                     style={{
-                        backgroundImage: `url('logos/Video.png')`
+                        backgroundImage: `url('https://visitrwanda.com/wp-content/uploads/fly-images/3132/Visit-Rwanda-NH_OO_Landscape_Kings_Palace_0470_MASTER-1920x1280.jpg')`
                     }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/70" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/10" />
+                <div className="absolute inset-0 bg-gradient-to-br from-green-900/20 via-green-900/40 to-green-900/50" />
+                <div className="absolute inset-0 bg-gradient-to-t from-green-900/30 via-transparent to-green-900/10" />
             </div>
 
             {/* Floating Elements */}

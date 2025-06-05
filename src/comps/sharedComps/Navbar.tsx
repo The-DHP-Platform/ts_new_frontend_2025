@@ -120,6 +120,10 @@ export default function DigitalHeritagePlatform() {
                                     <BookOpen className="h-4 w-4" />
                                     <span className="font-bold">About Us</span>
                                 </a>
+                                <a onClick={() => { handelNavigation("resources") }} className={getMobileNavClasses("resources")}>
+                                    <GraduationCap className="h-4 w-4" />
+                                    <span className="font-bold">Resources</span>
+                                </a>
                                 <a href='/market' className={getMobileNavClasses("marketplace")}>
                                     <ShoppingCart className="h-4 w-4" />
                                     <span className="font-bold">Marketplace</span>
@@ -127,10 +131,6 @@ export default function DigitalHeritagePlatform() {
                                 <a onClick={() => { handelNavigation("elearning") }} className={getMobileNavClasses("elearning")}>
                                     <GraduationCap className="h-4 w-4" />
                                     <span className="font-bold">E-Learning</span>
-                                </a>
-                                <a onClick={() => { handelNavigation("resources") }} className={getMobileNavClasses("resources")}>
-                                    <GraduationCap className="h-4 w-4" />
-                                    <span className="font-bold">Resources</span>
                                 </a>
                                 <a onClick={() => { handelNavigation("involved") }} className={getMobileNavClasses("involved")}>
                                     <User className="h-4 w-4" />
