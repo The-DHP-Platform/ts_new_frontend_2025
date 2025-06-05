@@ -1,4 +1,4 @@
-import  { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
     Search,
     ShoppingCart,
@@ -7,7 +7,17 @@ import {
     Home,
     ChevronDown,
     Menu,
-    X
+    X,
+    Settings2,
+    ChevronLeft,
+    ChevronRight,
+    Star,
+    Heart,
+    Eye,
+    Gift,
+    Zap,
+    Percent,
+    Clock
 } from 'lucide-react';
 
 const RwandanEcommerceLayout = () => {
@@ -16,6 +26,7 @@ const RwandanEcommerceLayout = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false);
     const [selectedCountry, setSelectedCountry] = useState('Rwanda, RWF');
+    const [currentSlide, setCurrentSlide] = useState(0);
 
     const categories = [
         'All category',
@@ -45,29 +56,132 @@ const RwandanEcommerceLayout = () => {
         'Tanzania, TZS'
     ];
 
+    const deals = [
+        {
+            id: 1,
+            title: "Traditional Imigongo Art",
+            subtitle: "Handcrafted Heritage",
+            price: "RWF 25,000",
+            originalPrice: "RWF 35,000",
+            discount: "30% OFF",
+            icon: <Star className="w-6 h-6" />,
+            bgColor: "from-purple-200 via-blue-200 to-purple-300",
+            buttonColor: "bg-purple-600 hover:bg-purple-700",
+            decorativeElements: (
+                <>
+                    <div className="absolute top-4 right-4 w-16 h-12">
+                        <div className="w-4 h-4 bg-red-400 rounded-full"></div>
+                        <div className="w-3 h-3 bg-white rounded-full mt-1 ml-2"></div>
+                        <div className="w-2 h-2 bg-yellow-300 rounded-full mt-1 ml-4"></div>
+                    </div>
+                    <div className="absolute bottom-8 right-8 w-8 h-8 bg-purple-400 rounded-full opacity-60"></div>
+                </>
+            )
+        },
+        {
+            id: 2,
+            title: "Wood Sculpture Collection",
+            subtitle: "Master Craftsman Series",
+            price: "RWF 45,000",
+            originalPrice: "RWF 60,000",
+            discount: "25% OFF",
+            icon: <Gift className="w-6 h-6" />,
+            bgColor: "from-green-200 via-teal-200 to-green-300",
+            buttonColor: "bg-green-600 hover:bg-green-700",
+            decorativeElements: (
+                <>
+                    <div className="absolute top-6 right-6 w-12 h-12">
+                        <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                        <div className="w-4 h-4 bg-green-500 rounded-full mt-2 ml-1"></div>
+                        <div className="w-2 h-2 bg-white rounded-full mt-1 ml-3"></div>
+                    </div>
+                    <div className="absolute bottom-6 right-10 w-6 h-6 bg-green-500 rounded-full opacity-70"></div>
+                </>
+            )
+        },
+        {
+            id: 3,
+            title: "Cultural Instruments",
+            subtitle: "Traditional Music Heritage",
+            price: "RWF 18,000",
+            originalPrice: "RWF 24,000",
+            discount: "Flash Sale",
+            icon: <Zap className="w-6 h-6" />,
+            bgColor: "from-orange-200 via-yellow-200 to-orange-300",
+            buttonColor: "bg-orange-600 hover:bg-orange-700",
+            decorativeElements: (
+                <>
+                    <div className="absolute top-5 right-5 w-14 h-10">
+                        <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
+                        <div className="w-4 h-4 bg-yellow-400 rounded-full mt-1 ml-2"></div>
+                        <div className="w-2 h-2 bg-red-400 rounded-full mt-1 ml-4"></div>
+                    </div>
+                    <div className="absolute bottom-7 right-7 w-7 h-7 bg-yellow-400 rounded-full opacity-75"></div>
+                </>
+            )
+        },
+        {
+            id: 4,
+            title: "Handwoven Baskets",
+            subtitle: "Authentic Rwandan Craft",
+            price: "RWF 12,000",
+            originalPrice: "RWF 16,000",
+            discount: "Limited Time",
+            icon: <Heart className="w-6 h-6" />,
+            bgColor: "from-pink-200 via-rose-200 to-pink-300",
+            buttonColor: "bg-pink-600 hover:bg-pink-700",
+            decorativeElements: (
+                <>
+                    <div className="absolute top-4 right-4 w-15 h-11">
+                        <div className="w-4 h-4 bg-pink-400 rounded-full"></div>
+                        <div className="w-3 h-3 bg-rose-300 rounded-full mt-1 ml-1"></div>
+                        <div className="w-2 h-2 bg-white rounded-full mt-1 ml-3"></div>
+                    </div>
+                    <div className="absolute bottom-6 right-9 w-8 h-8 bg-rose-400 rounded-full opacity-65"></div>
+                </>
+            )
+        }
+    ];
+
     const handleSearch = () => {
         console.log('Searching for:', searchQuery, 'in category:', selectedCategory);
     };
 
+    const nextSlide = () => {
+        setCurrentSlide((prev) => (prev + 1) % deals.length);
+    };
+
+    const prevSlide = () => {
+        setCurrentSlide((prev) => (prev - 1 + deals.length) % deals.length);
+    };
+
+    // Auto-advance slider
+    useEffect(() => {
+        const timer = setInterval(nextSlide, 5000);
+        return () => clearInterval(timer);
+    }, []);
+
+    const currentDeal = deals[currentSlide];
+
     return (
-        <div className=" bg-gray-50">
+        <div className="bg-gray-50">
             {/* Header */}
-            <header className="bg-white shadow-sm border-b">
-                <div className="max-w-full md:max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
+            <header className="bg-white shadow-sm border-b border-gray-200">
+                <div className="max-w-full md:max-w-11/12 mx-auto px-4 md:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-16">
                         {/* Logo */}
                         <div className="flex items-center space-x-3">
                             <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
                                 <img src="logos/logo-circle.png" alt="Digital Heritage" className="w-8 h-8 rounded-full" />
                             </div>
-                            <div className="hidden sm:block">
+                            <div className="hidden lg:block">
                                 <h1 className="text-lg font-semibold text-gray-900">Digital Heritage</h1>
                                 <p className="text-xs text-gray-500">Preservationists Platform</p>
                             </div>
                         </div>
 
                         {/* Search Bar - Hidden on mobile */}
-                        <div className="hidden md:flex flex-1 max-w-2xl mx-8">
+                        <div className="hidden lg:flex flex-1 max-w-2xl mx-8">
                             <div className="flex w-full">
                                 <input
                                     type="text"
@@ -99,15 +213,8 @@ const RwandanEcommerceLayout = () => {
 
                         {/* Right Icons */}
                         <div className="flex items-center space-x-4">
-                            <div className="hidden sm:flex items-center space-x-4">
-                                <div className="text-center cursor-pointer">
-                                    <User className="w-5 h-5 mx-auto text-gray-500" />
-                                    <span className="text-xs text-gray-500">Profile</span>
-                                </div>
-                                <div className="text-center cursor-pointer">
-                                    <Settings className="w-5 h-5 mx-auto text-gray-500" />
-                                    <span className="text-xs text-gray-500">Settings</span>
-                                </div>
+                            <div className="hidden lg:flex items-center space-x-4">
+     
                                 <div className="text-center cursor-pointer">
                                     <ShoppingCart className="w-5 h-5 mx-auto text-gray-500" />
                                     <span className="text-xs text-gray-500">My cart</span>
@@ -117,7 +224,7 @@ const RwandanEcommerceLayout = () => {
                             {/* Mobile menu button */}
                             <button
                                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                                className="md:hidden p-2"
+                                className="lg:hidden p-2"
                             >
                                 {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                             </button>
@@ -176,7 +283,7 @@ const RwandanEcommerceLayout = () => {
             </header>
 
             {/* Secondary Navigation */}
-            <nav className="bg-white border-b">
+            <nav className="bg-white border-b border-gray-200">
                 <div className="max-w-full md:max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-12">
                         <div className="flex items-center space-x-6">
@@ -186,7 +293,7 @@ const RwandanEcommerceLayout = () => {
                             </div>
                             <div className="flex items-center space-x-2 cursor-pointer">
                                 <span className="text-gray-800">Help</span>
-                                <ChevronDown className="w-4 h-4 text-gray-600" />
+                                <Settings2 className="w-4 h-4 text-gray-600" />
                             </div>
                         </div>
 
@@ -219,8 +326,8 @@ const RwandanEcommerceLayout = () => {
 
                             <div className="flex items-center space-x-2">
                                 <span className="text-gray-800">Ship to</span>
-                                <div className="w-6 h-4 bg-blue-500 rounded-sm flex items-center justify-center">
-                                    <div className="w-4 h-2 bg-yellow-400 rounded-sm"></div>
+                                <div className="w-6 h-4 bg-blue-500 rounded-sm flex items-center justify-center overflow-hidden">
+                                    <img src="https://flagdom.com/flag-resources/flag-images/international/rwanda/rwanda-flag_3000x2000.png" alt="" className="w-full h-full" />
                                 </div>
                                 <ChevronDown className="w-4 h-4 text-gray-600" />
                             </div>
@@ -234,7 +341,7 @@ const RwandanEcommerceLayout = () => {
                 <div className="flex flex-col lg:flex-row gap-6">
                     {/* Sidebar */}
                     <aside className="lg:w-80 w-full">
-                        <div className="bg-green-100 rounded-lg p-6">
+                        <div className="bg-white rounded-lg p-6">
                             <h3 className="text-lg font-semibold text-gray-800 mb-4">Gallery</h3>
                             <ul className="space-y-3">
                                 {sidebarCategories.map((category, index) => (
@@ -245,82 +352,125 @@ const RwandanEcommerceLayout = () => {
                                     </li>
                                 ))}
                             </ul>
-                            <button className="text-blue-600 hover:text-blue-800 mt-4 font-medium">
+                            <button className="text-blue-600 hover:text-blue-800 mt-4 font-medium cursor-pointer">
                                 See all
                             </button>
                         </div>
                     </aside>
 
-                    {/* Main Content Area */}
+                    {/* Main Content Area - Deal Slider */}
                     <main className="flex-1">
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                            {/* Hero Section with Rwandan Cultural Item */}
+                            {/* Hero Section with Deal Slider */}
                             <div className="lg:col-span-2">
-                                <div className="bg-gradient-to-r from-purple-200 via-blue-200 to-purple-300 rounded-lg p-8 h-80 flex items-center relative overflow-hidden">
-                                    <div className="flex-1 z-10">
+                                <div className={`bg-gradient-to-r ${currentDeal.bgColor} rounded-lg p-6 sm:p-8 h-80 sm:h-96 flex items-center relative overflow-hidden transition-all duration-500`}>
+                                    {/* Navigation Arrows */}
+                                    <button
+                                        onClick={prevSlide}
+                                        className="absolute left-2 top-1/2 transform -translate-y-1/2 z-20 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-all duration-200"
+                                    >
+                                        <ChevronLeft className="w-5 h-5 text-gray-700" />
+                                    </button>
+                                    <button
+                                        onClick={nextSlide}
+                                        className="absolute right-2 top-1/2 transform -translate-y-1/2 z-20 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-all duration-200"
+                                    >
+                                        <ChevronRight className="w-5 h-5 text-gray-700" />
+                                    </button>
+
+                                    {/* Deal Content */}
+                                    <div className="flex-1 z-10 pr-4">
+                                        <div className="flex items-center space-x-2 mb-2">
+                                            <div className="text-gray-700">
+                                                {currentDeal.icon}
+                                            </div>
+                                            <span className="text-sm text-gray-700 font-medium">{currentDeal.discount}</span>
+                                        </div>
                                         <h2 className="text-sm text-gray-700 mb-2">Latest trending</h2>
-                                        <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-6">
-                                            Artifact items
+                                        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-2">
+                                            {currentDeal.title}
                                         </h1>
+                                        <p className="text-lg text-gray-700 mb-4">{currentDeal.subtitle}</p>
+                                        
+                                        {/* Price Display */}
+                                        <div className="flex items-center space-x-3 mb-6">
+                                            <span className="text-2xl font-bold text-gray-800">{currentDeal.price}</span>
+                                            <span className="text-lg text-gray-500 line-through">{currentDeal.originalPrice}</span>
+                                        </div>
+
                                         <div className="flex flex-wrap gap-4">
-                                            <button className="bg-white text-gray-800 px-6 py-2 rounded-md hover:bg-gray-100 transition-colors duration-200 shadow-sm">
-                                                Learn more
+                                            <button className="bg-white text-gray-800 px-6 py-2 rounded-md hover:bg-gray-100 transition-colors duration-200 shadow-sm flex items-center space-x-2">
+                                                <Eye className="w-4 h-4" />
+                                                <span>View Details</span>
                                             </button>
-                                            <button className="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition-colors duration-200 shadow-sm">
-                                                Publish
+                                            <button className={`${currentDeal.buttonColor} text-white px-6 py-2 rounded-md transition-colors duration-200 shadow-sm flex items-center space-x-2`}>
+                                                <ShoppingCart className="w-4 h-4" />
+                                                <span>Add to Cart</span>
                                             </button>
                                         </div>
                                     </div>
 
-                                    {/* Traditional Rwandan Bowl Image Area */}
+                                    {/* Traditional Rwandan Item Illustration */}
                                     <div className="flex-1 flex items-center justify-center relative">
-                                        {/* Decorative flowers in background */}
-                                        <div className="absolute top-4 right-4 w-16 h-12">
-                                            <div className="w-4 h-4 bg-red-400 rounded-full"></div>
-                                            <div className="w-3 h-3 bg-white rounded-full mt-1 ml-2"></div>
-                                            <div className="w-2 h-2 bg-yellow-300 rounded-full mt-1 ml-4"></div>
-                                        </div>
+                                        {currentDeal.decorativeElements}
                                         
-                                        {/* Traditional Rwandan Bowl */}
+                                        {/* Main Item Display */}
                                         <div className="relative">
-                                            {/* Main bowl */}
-                                            <div className="w-48 h-24 bg-white rounded-full border-4 border-gray-200 shadow-lg relative">
-                                                {/* Traditional pattern on rim */}
-                                                <div className="absolute top-0 right-8 w-16 h-4 bg-gray-800 rounded-full opacity-20"></div>
-                                                <div className="absolute top-1 right-9 w-14 h-2 bg-gray-600 rounded-full opacity-30"></div>
-                                                
-                                                {/* Bowl interior shadow */}
+                                            <div className="w-36 sm:w-48 h-20 sm:h-24 bg-white rounded-full border-4 border-gray-200 shadow-lg relative">
+                                                <div className="absolute top-0 right-6 sm:right-8 w-12 sm:w-16 h-3 sm:h-4 bg-gray-800 rounded-full opacity-20"></div>
+                                                <div className="absolute top-1 right-7 sm:right-9 w-10 sm:w-14 h-1 sm:h-2 bg-gray-600 rounded-full opacity-30"></div>
                                                 <div className="absolute inset-2 bg-gray-100 rounded-full"></div>
                                             </div>
                                             
-                                            {/* Traditional wooden spoon */}
-                                            <div className="absolute -bottom-2 left-12 transform rotate-12">
-                                                {/* Spoon handle */}
-                                                <div className="w-20 h-3 bg-green-600 rounded-full"></div>
-                                                {/* Spoon bowl */}
-                                                <div className="w-8 h-6 bg-green-700 rounded-full -mt-1 ml-16 transform -rotate-12"></div>
-                                                {/* Spoon detail */}
-                                                <div className="w-1 h-1 bg-red-500 rounded-full absolute top-1 right-4"></div>
+                                            <div className="absolute -bottom-2 left-8 sm:left-12 transform rotate-12">
+                                                <div className="w-16 sm:w-20 h-2 sm:h-3 bg-green-600 rounded-full"></div>
+                                                <div className="w-6 sm:w-8 h-4 sm:h-6 bg-green-700 rounded-full -mt-1 ml-12 sm:ml-16 transform -rotate-12"></div>
+                                                <div className="w-1 h-1 bg-red-500 rounded-full absolute top-1 right-3 sm:right-4"></div>
                                             </div>
                                         </div>
                                         
-                                        {/* Additional decorative elements */}
-                                        <div className="absolute bottom-8 right-8 w-8 h-8 bg-green-400 rounded-full opacity-60"></div>
-                                        <div className="absolute top-12 left-4 w-6 h-6 bg-white rounded-full opacity-80"></div>
+                                        <div className="absolute top-8 sm:top-12 left-3 sm:left-4 w-4 sm:w-6 h-4 sm:h-6 bg-white rounded-full opacity-80"></div>
+                                    </div>
+
+                                    {/* Slide Indicators */}
+                                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+                                        {deals.map((_, index) => (
+                                            <button
+                                                key={index}
+                                                onClick={() => setCurrentSlide(index)}
+                                                className={`w-2 h-2 rounded-full transition-all duration-200 ${
+                                                    index === currentSlide ? 'bg-white w-6' : 'bg-white/50'
+                                                }`}
+                                            />
+                                        ))}
                                     </div>
                                 </div>
                             </div>
 
                             {/* Action Cards */}
                             <div className="space-y-4">
-                                <div className="bg-orange-400 text-white p-6 rounded-lg">
-                                    <h3 className="font-semibold mb-2">Get US $10 off</h3>
+                                <div className="bg-orange-400 text-white p-6 rounded-lg hover:bg-orange-500 transition-colors duration-200 cursor-pointer">
+                                    <div className="flex items-center justify-between mb-2">
+                                        <h3 className="font-semibold">Get US $10 off</h3>
+                                        <Percent className="w-5 h-5" />
+                                    </div>
                                     <p className="text-sm opacity-90">with a new supplier</p>
                                 </div>
 
-                                <div className="bg-teal-400 text-white p-6 rounded-lg">
-                                    <h3 className="font-semibold mb-2">Send quotes with</h3>
+                                <div className="bg-teal-400 text-white p-6 rounded-lg hover:bg-teal-500 transition-colors duration-200 cursor-pointer">
+                                    <div className="flex items-center justify-between mb-2">
+                                        <h3 className="font-semibold">Send quotes with</h3>
+                                        <Settings className="w-5 h-5" />
+                                    </div>
                                     <p className="text-sm opacity-90">supplier preferences</p>
+                                </div>
+
+                                <div className="bg-red-400 text-white p-6 rounded-lg hover:bg-red-500 transition-colors duration-200 cursor-pointer">
+                                    <div className="flex items-center justify-between mb-2">
+                                        <h3 className="font-semibold">Limited Time Offer</h3>
+                                        <Clock className="w-5 h-5" />
+                                    </div>
+                                    <p className="text-sm opacity-90">Free shipping available</p>
                                 </div>
                             </div>
                         </div>

@@ -128,7 +128,7 @@ const DealsAndOffers: React.FC = () => {
       {/* Deals Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
         {deals.map((deal) => (
-          <div key={deal.id} className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-300">
+          <div key={deal.id} className="bg-white rounded-xl border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-300">
             <div className="relative">
               {/* Discount Badge */}
               <div className="absolute top-3 left-3 bg-red-500 text-white px-2 py-1 rounded-md text-sm font-semibold z-10">
