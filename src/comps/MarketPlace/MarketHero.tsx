@@ -296,7 +296,7 @@ const RwandanEcommerceLayout = () => {
                 <div className="max-w-full md:max-w-11/12 mx-auto px-4 sm:px-6 xl:px-8">
                     <div className="flex items-center justify-between h-12">
                         <div className="flex items-center space-x-6">
-                            <div className="flex items-center space-x-2 cursor-pointer">
+                            <div className="flex items-center space-x-2 cursor-pointer" onClick={()=> window.location.href = '/'}>
                                 <Home className="w-4 h-4 text-gray-600" />
                                 <span className="text-gray-800">Home</span>
                             </div>
