@@ -8,9 +8,9 @@ const DHPHeroSection: React.FC = () => {
       {/* Background Pattern Overlay */}
       <div className="absolute inset-0 opacity-60">
         <div className="absolute inset-0" style={{
-          // backgroundImage: `url("logos/aboutHero.png")`,
-          backgroundRepeat:"no-repeat",
-          backgroundSize:"cover"
+          backgroundImage: `url("logos/aboutHero.png")`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover"
         }} />
       </div>
 
@@ -35,12 +35,12 @@ const DHPHeroSection: React.FC = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 flex items-center justify-center h-[600px] px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 flex items-center justify-center h-full px-4 sm:px-6 lg:px-8 bg-black/30">
         <div className="max-w-full md:max-w-11/12 mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            
+          <div className="grid grid-cols-1 lg:grid-cols-1 gap-12 items-center">
+
             {/* Left Content */}
-            <div className="text-center lg:text-left space-y-8 text-white">
+            <div className="text-center space-y-8 text-white w-full">
               <div className="space-y-6">
                 <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
                   Know more about{' '}
@@ -48,21 +48,21 @@ const DHPHeroSection: React.FC = () => {
                     DHP platform
                   </span>
                 </h1>
-                
-                <p className="text-lg sm:text-xl text-primary-muted max-w-2xl leading-relaxed">
-                  A one-stop platform dedicated to digitizing African cultural assets and fostering social cohesion 
+
+                <p className="text-lg sm:text-xl text-primary-muted max-w-2xl m-auto leading-relaxed">
+                  A one-stop platform dedicated to digitizing African cultural assets and fostering social cohesion
                   among communities towards sustainable heritage preservation.
                 </p>
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex  sm:flex-row gap-4 justify-center lg:justify-start">
-                <button className="btn-primary group inline-flex items-center gap-3 px-8 py-4 rounded-full text-white font-semibold text-lg transition-all duration-300 hover:shadow-xl">
+              <div className="flex  sm:flex-row gap-4 justify-center lg:justify-center w-full">
+                <button onClick={()=>window.location.href = "/loign"} className="btn-primary group inline-flex items-center gap-3 px-8 py-4 rounded-full text-white font-semibold text-lg transition-all duration-300 hover:shadow-xl">
                   <span>Get Started</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
                 </button>
-                
-                <button className="group inline-flex items-center gap-3 px-8 py-4 rounded-full text-white font-semibold text-lg border-2 border-white/30 hover:bg-white/10 transition-all duration-300">
+
+                <button onClick={()=>window.location.href = "/loign"} className="group inline-flex items-center gap-3 px-8 py-4 rounded-full text-white font-semibold text-lg border-2 border-white/30 hover:bg-white/10 transition-all duration-300">
                   <User2 className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
                   <span>Invite </span>
                 </button>
@@ -86,35 +86,8 @@ const DHPHeroSection: React.FC = () => {
             </div>
 
             {/* Right Visual Element - African Baskets */}
-            <div className="relative flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-lg">
-                
-                {/* Main Large Basket */}
-                <div className="relative z-10 w-80 h-80 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-yellow-600 via-orange-500 to-red-600 rounded-full opacity-20 blur-xl"></div>
-                  <div className="relative w-full h-full bg-white/10 backdrop-blur-lg rounded-full border border-white/20 flex items-center justify-center">
-                    {/* Basket Pattern */}
-                    <div className="w-64 h-64 rounded-full border-4 border-white/30 flex items-center justify-center">
-                      <div className="w-48 h-48 rounded-full border-2 border-white/20 flex items-center justify-center">
-                        <div className="w-32 h-32 rounded-full border-2 border-white/15 flex items-center justify-center">
-                          <div className="w-16 h-16 rounded-full bg-white/20"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
-                {/* Secondary Baskets */}
-                <div className="absolute -top-8 -right-8 w-32 h-40 bg-gradient-to-br from-red-500 to-red-700 rounded-full opacity-80 blur-sm"></div>
-                <div className="absolute -bottom-4 -left-8 w-24 h-32 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-full opacity-70 blur-sm"></div>
-                <div className="absolute top-16 -left-12 w-20 h-28 bg-gradient-to-br from-orange-500 to-yellow-600 rounded-full opacity-60 blur-sm"></div>
-                
-                {/* Accent Elements */}
-                <div className="absolute top-8 right-8 w-4 h-4 bg-white rounded-full animate-pulse"></div>
-                <div className="absolute bottom-16 left-4 w-2 h-2 bg-yellow-300 rounded-full animate-ping"></div>
-                <div className="absolute top-32 right-4 w-3 h-3 bg-red-300 rounded-full animate-pulse"></div>
-              </div>
-            </div>
+
           </div>
         </div>
       </div>

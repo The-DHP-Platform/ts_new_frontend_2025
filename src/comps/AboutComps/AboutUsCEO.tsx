@@ -25,14 +25,14 @@ const CEOProfileSlider: React.FC = () => {
       name: "Sarah Johnson",
       position: "CTO",
       quote: "Technology is the bridge between our rich cultural past and an innovative digital future",
-      image: "/api/placeholder/400/400"
+      image: "https://live.staticflickr.com/65535/54571298920_798668e3c5_z.jpg"
     },
     {
       id: 3,
       name: "Michael Chen",
       position: "Head of Operations",
       quote: "Preserving heritage requires both passion and precision in our approach",
-      image: "/api/placeholder/400/400"
+      image: "https://live.staticflickr.com/65535/54571298920_798668e3c5_z.jpg"
     },
     {
       id: 4,
@@ -67,7 +67,7 @@ const CEOProfileSlider: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100">
                 {/* Placeholder for actual image */}
                 <div className="w-full h-full flex items-center justify-center">
-                    <img src="images/ceo.png" alt="" />
+                    <img src={`${currentMember.image}`} alt="" />
                 </div>
               </div>
             </div>

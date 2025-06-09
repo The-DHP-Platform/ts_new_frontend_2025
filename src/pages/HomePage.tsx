@@ -8,20 +8,26 @@ import ContributeSection from '../comps/HomePages/contributeHome1';
 import ExploreMuseums from '../comps/HomePages/Mesasus';
 import StoryCard from '../comps/HomePages/VideoTest';
 import ArticlesSection from '../comps/HomePages/Artciles';
+import DigitalHeritagePlatform from '../comps/sharedComps/Navbar';
+import Footer from '../comps/sharedComps/Footer';
 
 const HomePage = () => {
     return (
         <>
-            <RwandaHeritageHero />
-            <BrandSlider />
-            <HistoricalEventsGrid />
-            <BooksProductView />
-            <BookCategoriesGrid />
-            <BookSlider />
-            <ContributeSection />
-            <ExploreMuseums />
-            <StoryCard />
-            <ArticlesSection />
+            <div className="min-h-screen bg-gray-50">
+                <DigitalHeritagePlatform />
+                <RwandaHeritageHero />
+                <BrandSlider />
+                <HistoricalEventsGrid />
+                <BooksProductView />
+                <BookCategoriesGrid />
+                <BookSlider />
+                <ContributeSection />
+                <ExploreMuseums />
+                <StoryCard />
+                <ArticlesSection />
+                <Footer />
+            </div>
         </>
     )
 }

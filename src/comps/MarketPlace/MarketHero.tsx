@@ -17,7 +17,8 @@ import {
     Gift,
     Zap,
     Percent,
-    Clock
+    Clock,
+    SettingsIcon
 } from 'lucide-react';
 
 const RwandanEcommerceLayout = () => {
@@ -167,21 +168,21 @@ const RwandanEcommerceLayout = () => {
         <div className="bg-gray-50">
             {/* Header */}
             <header className="bg-white shadow-sm border-b border-gray-200">
-                <div className="max-w-full md:max-w-11/12 mx-auto px-4 md:px-6 lg:px-8">
+                <div className="max-w-full md:max-w-11/12 mx-auto px-4 md:px-6 xl:px-8">
                     <div className="flex items-center justify-between h-16">
                         {/* Logo */}
                         <div className="flex items-center space-x-3">
                             <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
                                 <img src="logos/logo-circle.png" alt="Digital Heritage" className="w-8 h-8 rounded-full" />
                             </div>
-                            <div className="hidden lg:block">
+                            <div className="hidden xl:block">
                                 <h1 className="text-lg font-semibold text-gray-900">Digital Heritage</h1>
                                 <p className="text-xs text-gray-500">Preservationists Platform</p>
                             </div>
                         </div>
 
                         {/* Search Bar - Hidden on mobile */}
-                        <div className="hidden lg:flex flex-1 max-w-2xl mx-8">
+                        <div className="hidden xl:flex flex-1 max-w-2xl mx-8">
                             <div className="flex w-full">
                                 <input
                                     type="text"
@@ -213,8 +214,16 @@ const RwandanEcommerceLayout = () => {
 
                         {/* Right Icons */}
                         <div className="flex items-center space-x-4">
-                            <div className="hidden lg:flex items-center space-x-4">
+                            <div className="hidden xl:flex items-center space-x-4">
      
+                                <div className="text-center cursor-pointer">
+                                    <ShoppingCart className="w-5 h-5 mx-auto text-gray-500" />
+                                    <span className="text-xs text-gray-500">Profile</span>
+                                </div>
+                                <div className="text-center cursor-pointer">
+                                    <SettingsIcon className="w-5 h-5 mx-auto text-gray-500" />
+                                    <span className="text-xs text-gray-500">Setting</span>
+                                </div>
                                 <div className="text-center cursor-pointer">
                                     <ShoppingCart className="w-5 h-5 mx-auto text-gray-500" />
                                     <span className="text-xs text-gray-500">My cart</span>
@@ -224,7 +233,7 @@ const RwandanEcommerceLayout = () => {
                             {/* Mobile menu button */}
                             <button
                                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                                className="lg:hidden p-2"
+                                className="xl:hidden p-2"
                             >
                                 {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                             </button>
@@ -284,7 +293,7 @@ const RwandanEcommerceLayout = () => {
 
             {/* Secondary Navigation */}
             <nav className="bg-white border-b border-gray-200">
-                <div className="max-w-full md:max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="max-w-full md:max-w-11/12 mx-auto px-4 sm:px-6 xl:px-8">
                     <div className="flex items-center justify-between h-12">
                         <div className="flex items-center space-x-6">
                             <div className="flex items-center space-x-2 cursor-pointer">
@@ -337,10 +346,10 @@ const RwandanEcommerceLayout = () => {
             </nav>
 
             {/* Main Content */}
-            <div className="max-w-full md:max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8 py-6">
-                <div className="flex flex-col lg:flex-row gap-6">
+            <div className="max-w-full md:max-w-11/12 mx-auto px-4 sm:px-6 xl:px-8 py-6">
+                <div className="flex flex-col xl:flex-row gap-6">
                     {/* Sidebar */}
-                    <aside className="lg:w-80 w-full">
+                    <aside className="xl:w-80 w-full">
                         <div className="bg-white rounded-lg p-6">
                             <h3 className="text-lg font-semibold text-gray-800 mb-4">Gallery</h3>
                             <ul className="space-y-3">
@@ -360,9 +369,9 @@ const RwandanEcommerceLayout = () => {
 
                     {/* Main Content Area - Deal Slider */}
                     <main className="flex-1">
-                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
                             {/* Hero Section with Deal Slider */}
-                            <div className="lg:col-span-2">
+                            <div className="xl:col-span-2">
                                 <div className={`bg-gradient-to-r ${currentDeal.bgColor} rounded-lg p-6 sm:p-8 h-80 sm:h-96 flex items-center relative overflow-hidden transition-all duration-500`}>
                                     {/* Navigation Arrows */}
                                     <button
@@ -387,7 +396,7 @@ const RwandanEcommerceLayout = () => {
                                             <span className="text-sm text-gray-700 font-medium">{currentDeal.discount}</span>
                                         </div>
                                         <h2 className="text-sm text-gray-700 mb-2">Latest trending</h2>
-                                        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-2">
+                                        <h1 className="text-2xl sm:text-3xl xl:text-4xl font-bold text-gray-800 mb-2">
                                             {currentDeal.title}
                                         </h1>
                                         <p className="text-lg text-gray-700 mb-4">{currentDeal.subtitle}</p>
