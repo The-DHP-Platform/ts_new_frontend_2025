@@ -10,6 +10,7 @@ import {
   ArrowRight,
   ChevronUp
 } from 'lucide-react';
+
 import { useState } from 'react';
 
 const Footer = () => {
@@ -20,6 +21,12 @@ const Footer = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const socialLinks: { Icon: React.ElementType; label: string; url: string }[] = [
+  { Icon: Twitter, label: 'Twitter', url: 'https://x.com/The_DHPplatform' },
+  { Icon: Instagram, label: 'Instagram', url: 'https://www.instagram.com/the_dhp_platform/' },
+  { Icon: Linkedin, label: 'LinkedIn', url: 'https://rw.linkedin.com/company/the-dhp-platform?trk=public_post-text' },
+  { Icon: Youtube, label: 'YouTube', url: 'https://www.youtube.com/@TheDHPplatform-IRAGE/' },
+  ];
   const handleSubscribe = () => {
     if (email.trim()) {
       // Simulate subscription
@@ -196,37 +203,33 @@ const Footer = () => {
               <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
                 <div className="flex items-start text-white/80">
                   <MapPin size={14} className="mr-2 sm:mr-3 flex-shrink-0 mt-0.5 sm:w-4 sm:h-4" />
-                  <span className="text-xs sm:text-sm">123 Cultural Street, Art District</span>
+                  <span className="text-xs sm:text-sm">Norrsken House, 78 St  Kigali-Rwanda </span>
                 </div>
                 <div className="flex items-center text-white/80">
                   <Phone size={14} className="mr-2 sm:mr-3 flex-shrink-0 sm:w-4 sm:h-4" />
-                  <span className="text-xs sm:text-sm">+1 (555) 123-4567</span>
+                  <span className="text-xs sm:text-sm">+250 788 282 962</span>
                 </div>
                 <div className="flex items-center text-white/80">
                   <Mail size={14} className="mr-2 sm:mr-3 flex-shrink-0 sm:w-4 sm:h-4" />
-                  <span className="text-xs sm:text-sm">hello@yoursite.com</span>
+                  <span className="text-xs sm:text-sm">thedhpplatform@gmail.com</span>
                 </div>
               </div>
 
               {/* Social Icons */}
-              <div className="flex flex-wrap gap-3 sm:gap-4">
-                {[
-                  { Icon: Facebook, label: 'Facebook' },
-                  { Icon: Twitter, label: 'Twitter' },
-                  { Icon: Instagram, label: 'Instagram' },
-                  { Icon: Linkedin, label: 'LinkedIn' },
-                  { Icon: Youtube, label: 'YouTube' }
-                ].map(({ Icon, label }) => (
-                  <a
-                    key={label}
-                    href="#"
-                    className="p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors duration-200"
-                    aria-label={label}
-                  >
-                    <Icon size={16} className="sm:w-4 sm:h-4" />
-                  </a>
-                ))}
-              </div>
+          <div className="flex flex-wrap gap-3 sm:gap-4">
+         {socialLinks.map(({ Icon, label, url }) => (
+        <a
+          key={label}
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors duration-200"
+          aria-label={label}
+        >
+          <Icon size={16} className="sm:w-4 sm:h-4" />
+        </a>
+      ))}
+    </div>
             </div>
 
           </div>
@@ -237,7 +240,7 @@ const Footer = () => {
           <div className="flex flex-col space-y-4 lg:flex-row lg:justify-between lg:items-center lg:space-y-0">
             <div className="flex flex-col space-y-3 sm:flex-row sm:items-center sm:space-y-0 sm:space-x-6">
               <p className="text-white/80 text-xs sm:text-sm text-center sm:text-left">
-                &copy; {new Date().getFullYear()} Irage. All rights reserved.
+                &copy;  IRAGE Corps,{new Date().getFullYear()}. All rights reserved.
               </p>
               <div className="flex justify-center sm:justify-start space-x-4 sm:space-x-6">
                 <a href="#" className="text-white/60 hover:text-white text-xs sm:text-sm transition-colors duration-200">
