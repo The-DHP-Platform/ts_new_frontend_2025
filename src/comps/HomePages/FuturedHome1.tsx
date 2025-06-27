@@ -182,8 +182,8 @@ const BookCategoriesGrid = () => {
   /* -------------------------------- Render -------------------------------- */
   return (
     <>
-      <section className="bg-gradient-to-br from-slate-50 to-slate-100 px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto w-full max-w-screen-xl">
+      <section className="bg-gradient-to-br from-slate-50 to-slate-100 px-4 py-16 ">
+        <div className="max-w-full md:max-w-11/12 mx-auto">
           {/* ------------------------------ Header ------------------------------ */}
           <header className="mb-6 flex flex-col gap-4 rounded-2xl border border-white/20 p-4 sm:flex-row sm:items-center sm:justify-between">
             <h2 className="bg-gradient-to-r bg-clip-text text-4xl font-bold text-black max-md:text-2xl">
